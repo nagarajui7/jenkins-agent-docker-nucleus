@@ -19,5 +19,5 @@ RUN apk add --update \
 FROM scratch
 
 COPY --from=builder /usr/local/bin /usr/local/bin
-COPY --from=builder ${JENKINS_AGENT} ${JENKINS_AGENT}
+COPY --from=builder /usr/share/jenkins /usr/share/jenkins
 COPY --from=builder /opt/image-extension /opt/image-extension
