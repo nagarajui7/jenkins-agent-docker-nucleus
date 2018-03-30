@@ -45,7 +45,7 @@ else
     URL="-url $JENKINS_URL"
   fi
 
-  set -euo pipefail
+  set -eo pipefail
   IFS=$'\n\t'
 
   run-parts --exit-on-error /opt/image-extension
