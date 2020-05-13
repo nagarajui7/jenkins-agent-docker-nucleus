@@ -1,12 +1,12 @@
 FROM alpine:latest AS builder
 ENV JENKINS_HOME=/home/jenkins \
     JENKINS_AGENT=/usr/share/jenkins \
-    AGENT_VERSION=2.62.6
+    AGENT_VERSION=3.10
 
 COPY jenkins-agent /usr/local/bin/jenkins-agent
 COPY README-extension.md /opt/image-extension/README.md
 
-RUN apk add --update \
+RUN apk add --update-cache --no-cache \
         ca-certificates \
         curl \
     && \
